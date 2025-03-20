@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        .buttons {
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.cancel {
+            background-color: #dc3545;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+    <script>
+        function cancelForm() {
+            if (confirm("Are you sure you want to cancel?")) {
+                window.location.href = 'home.html'; // Redirect to Home Page
+            }
+        }
+
+        function confirmForm() {
+            alert("Form submitted successfully!");
+            // Add your form submission logic here
+        }
+
+        function goToHome(userRole) {
+            if (userRole === 'Admin') {
+                window.location.href = 'admin-home.html'; // Redirect to Admin Home
+            } else if (userRole === 'User') {
+                window.location.href = 'user-home.html'; // Redirect to User Home
+            } else {
+                alert("Invalid user role!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Membership Management</h1>
+
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Input</th>
+        </tr>
+        <tr>
+            <td>Membership Number</td>
+            <td><input type="text" name="membershipNumber" required></td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td><input type="date" name="startDate" required></td>
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td><input type="date" name="endDate" required></td>
+        </tr>
+        <tr>
+            <td>Membership Extension</td>
+            <td>
+                <input type="radio" name="membershipExtn" value="6_months" required> Six Months<br>
+                <input type="radio" name="membershipExtn" value="1_year" required> One Year<br>
+                <input type="radio" name="membershipExtn" value="2_years" required> Two Years
+            </td>
+        </tr>
+        <tr>
+            <td>Membership Remove</td>
+            <td>
+                <input type="radio" name="membershipRemove" value="Remove" required> Remove Membership
+            </td>
+        </tr>
+        <tr>
+            <td>Books or Movies</td>
+            <td>
+                <input type="radio" name="selection" value="movie" required> Movie<br>
+                <input type="radio" name="selection" value="book" required> Book
+            </td>
+        </tr>
+    </table>
+
+    <div class="buttons">
+        <button class="button cancel" onclick="cancelForm()">Cancel</button>
+        <button class="button" onclick="confirmForm()">Confirm</button>
+    </div>
+
+    <br>
+    <!-- Home Button -->
+    <button class="button" onclick="goToHome('Admin')">Home (Admin)</button>
+    <button class="button" onclick="goToHome('User')">Home (User)</button>
+
+    <div class="buttons">
+        <button class="logout button cancel" onclick="window.location.href = 'Logout.html';">Log Out</button>
+    </div>
+</body>
+</html>

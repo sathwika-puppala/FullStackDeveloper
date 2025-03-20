@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged Out</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .message {
+            font-size: 24px;
+            color: #dc3545; /* Red color for emphasis */
+            margin: 20px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+    <script>
+        // Function to redirect to Login Page
+        function redirectToLogin() {
+            window.location.href = 'login.html'; // Redirect to Login page
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <h1>Chart</h1>
+
+    <!-- Logout Message -->
+    <div class="message">You have successfully logged out.</div>
+
+    <!-- Login Button -->
+    <button class="button" onclick="redirectToLogin()">Login</button>
+</body>
+</html>

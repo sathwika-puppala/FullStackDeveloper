@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            display: block;
+            width: 100%;
+        }
+        /* Button category colors */
+        .nav-btn {
+            background-color: #4CAF50;
+        }
+        .nav-btn:hover {
+            background-color: #45a049;
+        }
+        .action-btn {
+            background-color: #2196F3;
+        }
+        .action-btn:hover {
+            background-color: #1E88E5;
+        }
+        .logout-btn {
+            background-color: #f44336;
+        }
+        .logout-btn:hover {
+            background-color: #e53935;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        
+        <!-- Categories -->
+        <h2>Reports</h2>
+        <button class="action-btn" onclick="activeIssues()">Active Issues</button>
+        <button class="action-btn" onclick="overdueReturns()">Overdue Returns</button>
+        <button class="action-btn" onclick="issueRequests()">Issue Requests</button>
+        
+        <!-- Master List of Movies Table -->
+        <h2>Master List of Movies</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Serial No</th>
+                    <th>Name of Movie</th>
+                    <th>Author Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Cost</th>
+                    <th>Procurement Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Movie 1</td>
+                    <td>Author A</td>
+                    <td>Action</td>
+                    <td>Available</td>
+                    <td>$20</td>
+                    <td>2025-02-15</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Movie 2</td>
+                    <td>Author B</td>
+                    <td>Drama</td>
+                    <td>Issued</td>
+                    <td>$25</td>
+                    <td>2024-11-10</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Log Out Button -->
+        <button class="logout-btn" onclick="logOut()">Log Out</button>
+    </div>
+
+    <script>
+        function goBack() {
+            alert('Going back to the previous page...');
+            window.history.back(); // Simulates going back to the previous page
+        }
+
+        function activeIssues() {
+            alert('Viewing Active Issues...');
+            // Implement navigation or functionality
+            window.location.href = 'Active.html'
+        }
+
+        function overdueReturns() {
+            alert('Viewing Overdue Returns...');
+            // Implement navigation or functionality
+            window.location.href = 'OverdueReturns.html'
+        }
+
+        function issueRequests() {
+            alert('Viewing Pending Issue Requests...');
+            // Implement navigation or functionality
+            window.location.href = 'IssueRequests.html'
+        }
+
+        function logOut() {
+            alert('Logging out...');
+            window.location.href ="Logout.html"
+            // Redirect to login page or logout logic
+        }
+    </script>
+</body>
+</html>

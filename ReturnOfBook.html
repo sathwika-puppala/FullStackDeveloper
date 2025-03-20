@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .cancel {
+            background-color: #f44336;
+        }
+        .cancel:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        
+        <button onclick="checkAvailability()">Is Book Available?</button>
+        <br>
+        
+        <label for="bookName">Issue Book:</label>
+        <select id="bookName">
+            <option value="">-- Select Book Name --</option>
+            <option>Book 1</option>
+            <option>Book 2</option>
+            <option>Book 3</option>
+        </select>
+        
+        <label for="authorName">Return Book:</label>
+        <textarea id="authorName" rows="4" placeholder="Enter Author Name..."></textarea>
+        
+        <label for="serialNo">Pay Fine (Serial No):</label>
+        <select id="serialNo">
+            <option value="">-- Select Serial No --</option>
+            <option>Serial 1</option>
+            <option>Serial 2</option>
+            <option>Serial 3</option>
+        </select>
+
+        <label for="issueDate">Issue Date:</label>
+        <input type="text" id="issueDate" placeholder="Enter Issue Date...">
+
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate">
+
+        <label for="remarks">Remarks (Optional):</label>
+        <textarea id="remarks" rows="4" placeholder="Enter any remarks..."></textarea>
+
+        <button onclick="confirmAction()">Confirm</button>
+        <button class="cancel" onclick="cancelAction()">Cancel</button>
+        <br><br>
+        <button onclick="logOut()">Log Out</button>
+    </div>
+
+    <script>
+        function checkAvailability() {
+            alert('Checking book availability...');
+        }
+
+        function confirmAction() {
+            const serialNo = document.getElementById('serialNo').value;
+            const issueDate = document.getElementById('issueDate').value;
+            const returnDate = document.getElementById('returnDate').value;
+            const remarks = document.getElementById('remarks').value;
+
+            if (!serialNo || !issueDate || !returnDate) {
+                alert('Please fill all mandatory fields: Serial No, Issue Date, and Return Date.');
+                return;
+            }
+
+            alert(`Confirmed!\nSerial No: ${serialNo}\nIssue Date: ${issueDate}\nReturn Date: ${returnDate}\nRemarks: ${remarks || 'None'}`);
+        }
+
+        function cancelAction() {
+            alert('Action cancelled.');
+            window.location.href ="Cancel.html"
+        }
+
+        function logOut() {
+            alert('Logging out...');
+            window.location.href ="Logout.html"
+        }
+    </script>
+</body>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Fine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .cancel {
+            background-color: #f44336;
+        }
+        .cancel:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pay Fine</h1>
+        
+        <label for="issueDate">Issue Date:</label>
+        <input type="date" id="issueDate" name="issueDate">
+        
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate" name="returnDate">
+        
+        <label for="remarks">Remarks (Optional):</label>
+        <textarea id="remarks" name="remarks" rows="4" placeholder="Add any additional remarks here..."></textarea>
+        
+        <button onclick="confirmPayment()">Confirm</button>
+        <button class="cancel" onclick="cancelPayment()">Cancel</button>
+        <br><br>
+        <button onclick="logOut()">Log Out</button>
+    </div>
+
+    <script>
+        function confirmPayment() {
+            const issueDate = document.getElementById('issueDate').value;
+            const returnDate = document.getElementById('returnDate').value;
+            const remarks = document.getElementById('remarks').value;
+
+            if (!issueDate || !returnDate) {
+                alert('Please select both Issue Date and Return Date.');
+                return;
+            }
+
+            alert(`Payment Confirmed!\nIssue Date: ${issueDate}\nReturn Date: ${returnDate}\nRemarks: ${remarks || 'None'}`);
+        }
+
+        function cancelPayment() {
+            alert('Payment Cancelled.');
+        }
+
+        function logOut() {
+            alert('Logging out...');
+            window.location.href ="Logout.html"
+        }
+    </script>
+</body>
+</html>

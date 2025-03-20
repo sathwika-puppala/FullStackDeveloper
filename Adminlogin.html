@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <h3>Library Management System</h3>
+    </div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="AdminId">Admin ID:</label>
+        <input type="text" id="AdminId" name="Admin" placeholder="Enter Admin ID" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const AdminId = document.getElementById('AdminId').value;
+      const password = document.getElementById('password').value;
+
+      // Regular expressions
+      const idPattern = /^(?=.*[A-Za-z])(?=.*\d).+$/; // At least one alphabet and one number
+      const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // At least 8 characters, one alphabet, one number, one special character
+
+      if (!idPattern.test(AdminId)) {
+        alert('Admin ID must contain at least one alphabet and one number!');
+        return;
+      }
+
+      if (!passwordPattern.test(password)) {
+        alert('Password must be at least 8 characters long, and include at least one alphabet, one number, and one special character!');
+        return;
+      }document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const Admin = document.getElementById('AdminId').value;
+      const password = document.getElementById('password').value;
+
+      // Regular expressions
+      const idPattern = /^(?=.*[A-Za-z])(?=.*\d).+$/; // At least one alphabet and one number
+      const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // At least 8 characters, one alphabet, one number, one special character
+
+      if (!idPattern.test(AdminId)) {
+        alert('User ID/Admin ID must contain at least one alphabet and one number!');
+        return;
+      }
+      else if (!passwordPattern.test(password)) {
+        alert('Password must be at least 8 characters long, and include at least one alphabet, one number, and one special character!');
+        return;
+      }
+      else {
+        alert('Login Successfully');
+        window.location.href = 'Adminhp.html';
+      }
+    });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .menu {
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            margin: 10px 0;
+        }
+        .menu-item button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-item button:hover {
+            background-color: #0056b3;
+        }
+        .logout {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .logout:hover {
+            background-color: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Main Menu</h1>
+
+    <div class="menu">
+        <div class="menu-item">
+            <a href="chart.html">Chart</a>
+        </div>
+        <div class="menu-item">
+            <a href="home.html">Home</a>
+        </div>
+        <div class="menu-item">
+            <a href="housekeeping.html">Housekeeping</a>
+        </div>
+        <div class="menu-item">
+            <a href="membership.html">Membership</a>
+            <button onclick="navigateTo('AddMembership.html')">AddMembership</button>
+            <button onclick="navigateTo('UpdateMembership.html')">UpdateMembership</button>
+        </div>
+        <div class="menu-item">
+            <a href="books-movies.html">Books/Movies</a>
+            <button onclick="navigateTo('Addbooks.html')">AddBooks</button>
+            <button onclick="navigateTo('Updatebooks.html')">Updatebooks</button>
+        </div>
+        <div class="menu-item">
+            <a href="user-management.html">User Management</a>
+            <button onclick="navigateTo('UserManagemnet.html')">Add</button>
+            <button onclick="navigateTo('UserManagemnet.html')">Update</button>
+        </div>
+    </div>
+
+    <!-- Log Out Button -->
+    <button class="logout" onclick="logOut()">Log Out</button>
+
+    <script>
+        // Function for navigation
+        function navigateTo(page)
+         {
+            if(page == 'AddMembership' ){
+                window.location.href ='AddMembership.html'
+            }
+            else if(page == 'UpdateMembership' ){
+                window.location.href ='UpdateMembership.html'
+            }
+            else if(page == 'AddBooks' ){
+                window.location.href ='Addbook.html'
+            }
+            else if(page == 'UpdateBook' ){
+                window.location.href ='Updatebook.html'
+            }
+            else(page == 'Update')
+            {
+                window.location.href ='UserManagemnet.html'
+            }
+        }
+
+        // Function for logging out
+        function logOut() {
+            alert("You have logged out."); 
+            window.location.href = 'Logout.html'
+                    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        .buttons {
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.cancel {
+            background-color: #dc3545;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+    <script>
+        // Functionality for "Cancel" and "Confirm" buttons
+        function cancelForm() {
+            if (confirm("Are you sure you want to cancel?")) {
+                window.location.href = 'home.html'; // Redirect to the Home page
+            }
+        }
+
+        function confirmForm() {
+            alert("Form submitted successfully!");
+            // Add your form submission logic here
+        }
+    </script>
+</head>
+<body>
+    <h1>Membership Form</h1>
+
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Input</th>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" name="firstName" required></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" name="lastName" required></td>
+        </tr>
+        <tr>
+            <td>Contact Name</td>
+            <td><input type="text" name="contactName" required></td>
+        </tr>
+        <tr>
+            <td>Contact Address</td>
+            <td><input type="text" name="contactAddress" required></td>
+        </tr>
+        <tr>
+            <td>Adhaar Card No</td>
+            <td><input type="text" name="adhaarNumber" required></td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td><input type="date" name="startDate" required></td>
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td><input type="date" name="endDate" required></td>
+        </tr>
+        <tr>
+            <td>Membership Duration</td>
+            <td>
+                <input type="radio" name="membership" value="6_months" required> Six Months<br>
+                <input type="radio" name="membership" value="1_year" required> One Year<br>
+                <input type="radio" name="membership" value="2_years" required> Two Years
+            </td>
+        </tr>
+    </table>
+
+    <div class="buttons">
+        <!-- Cancel and Confirm Buttons -->
+        <button class="button cancel" onclick="window.location.href = 'Cancel.html';">Cancel</button>
+        <button class="button" onclick="window.location.href = 'Confirm.html';">Confirm</button>
+    </div>
+</body>

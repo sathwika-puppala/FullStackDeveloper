@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            margin: 10px 1%;
+            cursor: pointer;
+            color: white;
+            border: none;
+        }
+        .confirm {
+            background-color: #4CAF50;
+        }
+        .confirm:hover {
+            background-color: #45a049;
+        }
+        .cancel {
+            background-color: #f44336;
+        }
+        .cancel:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        
+        <!-- Is Book Available -->
+        <button onclick="checkAvailability()">Is Book Available?</button>
+        <br>
+
+        <!-- Issue Book -->
+        <label for="bookName">Issue Book:</label>
+        <input type="text" id="bookName" placeholder="Enter Book Name">
+        
+        <!-- Return Book -->
+        <label for="authorName">Return Book:</label>
+        <input type="text" id="authorName" placeholder="Enter Author Name">
+        
+        <!-- Pay Fine -->
+        <h2>Pay Fine</h2>
+        <label for="serialNo">Serial No:</label>
+        <input type="text" id="serialNo" placeholder="Enter Serial No">
+
+        <label for="issueDate">Issue Date:</label>
+        <input type="date" id="issueDate">
+
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate">
+
+        <label for="actualReturnDate">Actual Return Date:</label>
+        <input type="date" id="actualReturnDate">
+
+        <label for="fineCalculated">Fine Calculated:</label>
+        <input type="text" id="fineCalculated" value="0" readonly>
+
+        <label for="finePaid">
+            <input type="checkbox" id="finePaid">
+            Fine Paid
+        </label>
+
+        <label for="remarks">Remarks (Optional):</label>
+        <textarea id="remarks" rows="4" placeholder="Add any remarks here..."></textarea>
+
+        <!-- Confirm and Cancel Buttons -->
+        <button class="confirm" onclick="confirmAction()">Confirm</button>
+        <button class="cancel" onclick="cancelAction()">Cancel</button>
+        <br><br>
+        
+        <!-- Log Out -->
+        <button onclick="logOut()">Log Out</button>
+    </div>
+
+    <script>
+        function checkAvailability() {
+            alert('Checking book availability...');
+            window.location.href ="BookAvailable.html"
+        }
+
+        function confirmAction() {
+            const serialNo = document.getElementById('serialNo').value;
+            const issueDate = document.getElementById('issueDate').value;
+            const returnDate = document.getElementById('returnDate').value;
+            const actualReturnDate = document.getElementById('actualReturnDate').value;
+            const fineCalculated = document.getElementById('fineCalculated').value;
+            const finePaid = document.getElementById('finePaid').checked ? 'Yes' : 'No';
+            const remarks = document.getElementById('remarks').value;
+
+            if (!serialNo || !issueDate || !returnDate || !actualReturnDate) {
+                alert('Please fill all mandatory fields: Serial No, Issue Date, Return Date, and Actual Return Date.');
+                return;
+            }
+
+            alert(`Payment Confirmed!\nSerial No: ${serialNo}\nIssue Date: ${issueDate}\nReturn Date: ${returnDate}\nActual Return Date: ${actualReturnDate}\nFine Calculated: ${fineCalculated}\nFine Paid: ${finePaid}\nRemarks: ${remarks || 'None'}`);
+        }
+
+        function cancelAction() {
+            alert('Action cancelled.');
+            window.location.href ="Cancel.html"
+        }
+
+        function logOut() {
+            alert('Logging out...');
+
+            window.location.href ="Logout.html"
+        }
+    </script>
+</body>
+</html>

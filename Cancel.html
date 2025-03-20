@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Cancelled</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .message {
+            font-size: 24px;
+            color: #ff0000; /* Red color for emphasis */
+            margin: 20px 0;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.cancel {
+            background-color: #dc3545; /* Red button for Log Out */
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+    <script>
+        // Function to redirect to Home based on user role
+        function goToHome(userRole) {
+            if (userRole === 'Admin') {
+                window.location.href = 'Adminlogin.html'; // Redirect to Admin Home Page
+            } else if (userRole === 'User') {
+                window.location.href = 'Userlogin.html'; // Redirect to User Home Page
+            } else {
+                alert("Invalid user role!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <h1>Chart</h1>
+
+    <!-- Main Message -->
+    <div class="message">Transaction Cancelled</div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <!-- Home Buttons -->
+        <button class="button" onclick="goToHome('Admin')">Home (Admin)</button>
+        <button class="button" onclick="goToHome('User')">Home (User)</button>
+
+        <!-- Log Out Button -->
+        <button class="button cancel" onclick="window.location.href = 'Logout.html';">Log Out</button>
+    </div>
+</body>
+</html>

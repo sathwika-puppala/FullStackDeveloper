@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .button {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        <button class="button" onclick="checkAvailability()">Is Book Available?</button>
+        <br>
+        <label for="bookName">Issue Book:</label>
+        <select id="bookName">
+            <option>-- Select Book --</option>
+            <option>Book 1</option>
+            <option>Book 2</option>
+            <option>Book 3</option>
+        </select>
+        <button class="button" onclick="issueBook()">Issue</button>
+        <br>
+        <label for="authorName">Return Book:</label>
+        <select id="authorName">
+            <option>-- Select Author --</option>
+            <option>Author 1</option>
+            <option>Author 2</option>
+            <option>Author 3</option>
+        </select>
+        <button class="button" onclick="returnBook()">Return</button>
+        <br>
+        <button class="button" onclick="payFine()">Pay Fine</button>
+        <br>
+        <button class="button" onclick="goBack()">Back</button>
+        <button class="button" onclick="search()">Search</button>
+        <br><br>
+        <button class="button" onclick="logOut()">Log Out</button>
+    </div>
+
+    <script>
+        function checkAvailability() {
+            alert('Checking book availability...');
+        }
+
+        function issueBook() {
+            const book = document.getElementById('bookName').value;
+            alert('Issuing: ' + book);
+        }
+
+        function returnBook() {
+            const author = document.getElementById('authorName').value;
+            alert('Returning book by: ' + author);
+            window.location.href = 'ReturnOfBook.html'
+        }
+
+        function payFine() {
+            alert('Paying fine...');
+            window.location.href = 'PayForBook.html'
+        }
+
+        function goBack() {
+            alert('Going back...');
+        }
+        function logOut() {
+            alert('Logging out...');
+            window.location.href = 'Logout.html'
+             }
+    </script>
+</body>
+</html>

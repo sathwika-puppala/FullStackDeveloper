@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 20px;
+            gap: 20px;
+        }
+        .container {
+            width: 100%;
+        }
+        .left {
+            flex: 1;
+            text-align: left;
+        }
+        .right {
+            flex: 2;
+            text-align: left;
+        }
+        .button-back {
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-back:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Left Section for Reports -->
+            <h2>Reports</h2>
+            <button class="action-btn" onclick="activeIssues()">Active Issues</button>
+            <button class="action-btn" onclick="overdueReturns()">Overdue Returns</button>
+            <button class="action-btn" onclick="issueRequests()">Issue Requests</button>
+        
+         <!-- Navigation Buttons -->
+         
+        
+         <button class="button-back" onclick="goHome()">Home</button>
+         <button class="button-back" onclick="window.history.back()">Back</button>
+        <!-- Right Section for Master List of Movies -->
+        <div class="right">
+            <h2>Master List of Movies</h2>
+            <table>
+                <tr>
+                    <th>Serial No</th>
+                    <th>Name of Movie</th>
+                    <th>Author Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Cost</th>
+                    <th>Procurement Date</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Movie Title 1</td>
+                    <td>Author Name 1</td>
+                    <td>Category 1</td>
+                    <td>Available</td>
+                    <td>$10</td>
+                    <td>2025-03-20</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            alert('Going back to the previous page...');
+            window.history.back(); // Simulates going back to the previous page
+        }
+        function goHome() {
+            alert('Going back to the previous page...');
+            window.location.href = "login.html" // Simulates going back to the previous page
+        }
+        function activeIssues() {
+            alert('Viewing Active Issues...');
+            // Implement navigation or functionality
+            window.location.href = 'Active.html'
+        }
+
+        function overdueReturns() {
+            alert('Viewing Overdue Returns...');
+            // Implement navigation or functionality
+            window.location.href = 'OverdueReturns.html'
+        }
+
+        function issueRequests() {
+            alert('Viewing Pending Issue Requests...');
+            // Implement navigation or functionality
+            window.location.href = 'IssueRequests.html'
+        }
+
+        function logOut() {
+            alert('Logging out...');
+            window.location.href = 'Logout.html'
+        }
+    </script>
+</body>
+</html>

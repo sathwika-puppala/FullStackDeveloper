@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        button, a {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover, a:hover {
+            background-color: #45a049;
+        }
+        .logout {
+            background-color: #f44336;
+        }
+        .logout:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Available Reports</h1>
+        <ul>
+            <li><button onclick="goToHome()">Home</button></li>
+            <li><button onclick="masterList('Books')">Master List of Books</button></li>
+            <li><button onclick="masterList('Movies')">Master List of Movies</button></li>
+            <li><button onclick="masterList('Memberships')">Master List of Memberships</button></li>
+            <li><button onclick="activeIssues()">Active Issues</button></li>
+            <li><button onclick="overdueReturns()">Overdue Returns</button></li>
+            <li><button onclick="pendingIssueRequests()">Pending Issue Requests</button></li>
+            <li><button class="logout" onclick="logOut()">Log Out</button></li>
+        </ul>
+    </div>
+
+    <script>
+        function viewChart() {
+            alert('Viewing Chart...');
+            // Implement navigation or functionality
+        }
+
+        function goToHome() {
+            alert('Redirecting to Home Page...');
+            // Implement logic to redirect to Admin or User Home Page based on role
+        }
+
+        function availableReports() {
+            alert('Viewing Available Reports...');
+            // Implement navigation or functionality
+        }
+
+        function masterList(category) {
+            if(category == 'Books'){
+            alert("Navigating to Master List of Books")
+            window.location.href = 'MlistOfBooks.html'
+        }
+        else if(category == 'Movies'){
+            alert("Navigating to Master List of Movies")
+            window.location.href = 'MlistOfMovies.html'
+        }
+        else if(category == 'Memberships'){
+            alert("Navigating to Master list of Memberships")
+            window.location.href = 'MlistOfMemberShips.html'
+        }
+        else{
+            alert("Please select correct option")
+        }
+        }
+
+        function activeIssues() {
+            alert('Viewing Active Issues...');
+            // Implement navigation or functionality
+            window.location.href = 'Active.html'
+        }
+
+        function overdueReturns() {
+            alert('Viewing Overdue Returns...');
+            // Implement navigation or functionality
+            window.location.href = 'OverdueReturns.html'
+        }
+
+        function pendingIssueRequests() {
+            alert('Viewing Pending Issue Requests...');
+            // Implement navigation or functionality
+            window.location.href = 'IssueRequests.html'
+        }
+
+        function logOut() {
+            alert('Logging Out...');
+            window.location.href ="Logout.html"
+            // Implement log-out logic
+        }
+    </script>
+</body>
+</html>

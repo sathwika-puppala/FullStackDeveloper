@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership and Books/Movies Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        .buttons {
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.cancel {
+            background-color: #dc3545;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+    <script>
+        // Functionality for "Cancel" and "Confirm" buttons
+        function cancelForm() {
+            if (confirm("Are you sure you want to cancel?")) {
+                window.location.href = 'home.html'; // Redirect to the Home page
+            }
+        }
+
+        function confirmForm() {
+            alert("Form submitted successfully!");
+            // Add form submission logic here if required
+        }
+
+        function goToHome(userRole) {
+            if (userRole === 'Admin') {
+                window.location.href = 'admin-home.html'; // Redirect to Admin Home Page
+            } else if (userRole === 'User') {
+                window.location.href = 'user-home.html'; // Redirect to User Home Page
+            } else {
+                alert("Invalid user role!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Membership and Books/Movies Management</h1>
+
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Input</th>
+        </tr>
+        <tr>
+            <td>Action</td>
+            <td>
+                <input type="radio" name="action" value="addBookMovie" required> Add Book/Movie<br>
+                <input type="radio" name="action" value="updateBookMovie" required> Update Book/Movie
+            </td>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td>
+                <input type="radio" name="type" value="book" required> Book<br>
+                <input type="radio" name="type" value="movie" required> Movie
+            </td>
+        </tr>
+        <tr>
+            <td>Book/Movie Name</td>
+            <td>
+                <input type="text" name="name" placeholder="Enter Name" required>
+                <!-- Example Dropdown -->
+                <select name="nameDropdown">
+                    <option value="">Select Book/Movie</option>
+                    <option value="Book1">Book 1</option>
+                    <option value="Movie1">Movie 1</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Serial Number</td>
+            <td><input type="text" name="serialNumber" placeholder="Enter Serial Number" required></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>
+                <select name="status" required>
+                    <option value="">Select Status</option>
+                    <option value="available">Available</option>
+                    <option value="unavailable">Unavailable</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="date" name="date" required></td>
+        </tr>
+    </table>
+
+    <div class="buttons">
+        <!-- Cancel and Confirm Buttons -->
+        <button class="button cancel" onclick="cancelForm()">Cancel</button>
+        <button class="button" onclick="confirmForm()">Confirm</button>
+    </div>
+
+    <br>
+    <!-- Home Button -->
+    <button class="button" onclick="goToHome('Admin')">Home (Admin)</button>
+    <button class="button" onclick="goToHome('User')">Home (User)</button>
+
+    <div class="buttons">
+        <!-- Log Out Button -->
+        <button class="button cancel" onclick="window.location.href = 'Logout.html';">Log Out</button>
+    </div>
+</body>
+</html>

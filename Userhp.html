@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .header button {
+      padding: 10px;
+      background-color: white;
+      border: none;
+      color: #007BFF;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .header button:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .navbar {
+      margin-bottom: 20px;
+    }
+
+    .navbar button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .navbar button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .logout {
+      text-align: right;
+    }
+
+    .logout button {
+      background-color: #FF4C4C;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .logout button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Home Page</h1>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div class="content">
+    <div class="navbar">
+      <button onclick="navigateTo('reports')">Reports</button>
+      <button onclick="navigateTo('transactions')">Transactions</button>
+    </div>
+
+    <h2>Product Details</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Code No From</th>
+          <th>Code No To</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SC(B/M)000001</td>
+          <td>SC(B/M)000004</td>
+          <td>Science</td>
+        </tr>
+        <tr>
+          <td>EC(B/M)000001</td>
+          <td>EC(B/M)000004</td>
+          <td>Economics</td>
+        </tr>
+        <tr>
+          <td>FC(B/M)000001</td>
+          <td>FC(B/M)000004</td>
+          <td>Fiction</td>
+        </tr>
+        <tr>
+          <td>CH(B/M)000001</td>
+          <td>CH(B/M)000004</td>
+          <td>Children</td>
+        </tr>
+        <tr>
+          <td>PD(B/M)000001</td>
+          <td>PD(B/M)000004</td>
+          <td>Personal Development</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="logout">
+      <button onclick="logout()">Log Out</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      alert("Navigating back...");
+      // Add logic to navigate back to the previous page
+    }
+    if(page === "Transactions"){
+        window.location.href = 'Transaction.html';
+      }
+    else if(page === "Reports"){
+
+        window.location.href = 'Reports.html';
+      }
+      // Add logic to navigate to the Reports or Transactions pages
+      function navigateTo(page)
+     {
+        if(page == 'transactions'){
+            alert("Navigating to Transactions")
+            window.location.href = 'Trasaction.html'
+        }
+        else if(page == 'reports'){
+            alert("Navigating to reports")
+            window.location.href = 'Reports.html'
+        }
+        else{
+            alert("Please select correct option")
+        }
+      }
+
+    function logout() {
+      alert("Logging out...");
+      window.location.href ="Logout.html"
+      // Add logic to log out the user and redirect to the login page
+    }
+  </script>
+</body>
+</html>

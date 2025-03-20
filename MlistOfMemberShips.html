@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        /* Button category colors */
+        .nav-btn {
+            background-color: #4CAF50;
+        }
+        .nav-btn:hover {
+            background-color: #45a049;
+        }
+        .confirm-btn {
+            background-color: #2196F3;
+        }
+        .confirm-btn:hover {
+            background-color: #1E88E5;
+        }
+        .logout-btn {
+            background-color: #f44336;
+        }
+        .logout-btn:hover {
+            background-color: #e53935;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+
+       
+        <!-- Categories -->
+        <h2>Reports</h2>
+        <button class="confirm-btn" onclick="activeIssues()">Active Issues</button>
+        <button class="confirm-btn" onclick="overdueReturns()">Overdue Returns</button>
+        <button class="confirm-btn" onclick="issueRequests()">Issue Requests</button>
+
+        <!-- List of Active Memberships Table -->
+        <h2>List of Active Memberships</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Membership Id</th>
+                    <th>Name of Member</th>
+                    <th>Contact Number</th>
+                    <th>Contact Address</th>
+                    <th>Aadhar Card No</th>
+                    <th>Start Date of Membership</th>
+                    <th>End Date of Membership</th>
+                    <th>Status</th>
+                    <th>Amount Pending (Fine)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>1234567890</td>
+                    <td>123 Street, City</td>
+                    <td>1234-5678-9012</td>
+                    <td>2025-01-01</td>
+                    <td>2025-12-31</td>
+                    <td>Active</td>
+                    <td>₹0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>9876543210</td>
+                    <td>456 Avenue, City</td>
+                    <td>9876-5432-1098</td>
+                    <td>2024-06-01</td>
+                    <td>2025-05-31</td>
+                    <td>Inactive</td>
+                    <td>₹100</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Confirm and Log Out Buttons -->
+        <button class="confirm-btn" onclick="confirmAction()">Confirm</button>
+        <button class="logout-btn" onclick="logOut()">Log Out</button>
+        <button class="back-btn" onclick="goBack()">Back</button>
+        </div>
+
+    <script>
+        function goBack() {
+            alert('Going back to the previous page...');
+            window.history.back(); // Simulates going back to the previous page
+        }
+        function goConfirm() {
+            alert('Going back to the previous page...');
+            window.history.href="Confirm.html"// Simulates going back to the previous page
+        }
+
+        function activeIssues() {
+            alert('Viewing Active Issues...');
+            // Implement navigation or functionality
+            window.location.href = 'Active.html'
+        }
+
+        function overdueReturns() {
+            alert('Viewing Overdue Returns...');
+            // Implement navigation or functionality
+            window.location.href = 'OverdueReturns.html'
+        }
+
+        function issueRequests() {
+            alert('Viewing Pending Issue Requests...');
+            // Implement navigation or functionality
+            window.location.href = 'IssueRequests.html'
+        }
+
+        function logOut() {
+            alert('Logging out...');
+            window.location.href ="Logout.html"
+        }
+    </script>
+</body>
+</html>
